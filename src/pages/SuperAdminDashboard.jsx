@@ -29,10 +29,10 @@ const SuperAdminDashboard = () => {
       const headers = { Authorization: `Bearer ${token}` }
 
       const [statsRes, usersRes, campaignsRes, donationsRes] = await Promise.all([
-        axios.get("http://localhost:5000/api/admin/stats", { headers }),
-        axios.get("http://localhost:5000/api/admin/users", { headers }),
-        axios.get("http://localhost:5000/api/campaigns", { headers }),
-        axios.get("http://localhost:5000/api/admin/all-donations", { headers }),
+        axios.get("https://donate-hub-backend11.vercel.app/api/admin/stats", { headers }),
+        axios.get("https://donate-hub-backend11.vercel.app/api/admin/users", { headers }),
+        axios.get("https://donate-hub-backend11.vercel.app/api/campaigns", { headers }),
+        axios.get("https://donate-hub-backend11.vercel.app/api/admin/all-donations", { headers }),
       ])
 
       setStats(statsRes.data)
@@ -50,7 +50,7 @@ const SuperAdminDashboard = () => {
     try {
       const token = localStorage.getItem("token")
       await axios.put(
-        `http://localhost:5000/api/admin/users/${userId}/${action}`,
+        `https://donate-hub-backend11.vercel.app/api/admin/users/${userId}/${action}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } },
       )
@@ -64,7 +64,7 @@ const SuperAdminDashboard = () => {
     if (window.confirm("Are you sure you want to delete this user?")) {
       try {
         const token = localStorage.getItem("token")
-        await axios.delete(`http://localhost:5000/api/admin/users/${userId}`, {
+        await axios.delete(`https://donate-hub-backend11.vercel.app/api/admin/users/${userId}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         fetchDashboardData()

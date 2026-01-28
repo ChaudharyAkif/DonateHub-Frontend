@@ -40,7 +40,7 @@ const CampaignManagement = ({ campaigns, onCampaignUpdate }) => {
     setLoading(true)
     try {
       const newStatus = currentStatus === "active" ? "closed" : "active"
-      await axios.put(`http://localhost:5000/api/campaigns/${campaignId}`, {
+      await axios.put(`https://donate-hub-backend11.vercel.app/api/campaigns/${campaignId}`, {
         status: newStatus,
       })
       onCampaignUpdate()
@@ -56,7 +56,7 @@ const CampaignManagement = ({ campaigns, onCampaignUpdate }) => {
     if (window.confirm(`Are you sure you want to delete "${campaignTitle}"? This action cannot be undone.`)) {
       setLoading(true)
       try {
-        await axios.delete(`http://localhost:5000/api/campaigns/${campaignId}`)
+        await axios.delete(`https://donate-hub-backend11.vercel.app/api/campaigns/${campaignId}`)
         onCampaignUpdate()
       } catch (error) {
         console.error("Error deleting campaign:", error)

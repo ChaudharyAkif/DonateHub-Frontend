@@ -22,7 +22,7 @@ const CampaignDetail = () => {
 
   const fetchCampaignDetails = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/campaigns/${id}`)
+      const response = await axios.get(`https://donate-hub-backend11.vercel.app/api/campaigns/${id}`)
       setCampaign(response.data)
     } catch (error) {
       console.error("Error fetching campaign:", error)
@@ -34,7 +34,7 @@ const CampaignDetail = () => {
 
   const fetchCampaignDonations = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/donations/campaign/${id}`)
+      const response = await axios.get(`https://donate-hub-backend11.vercel.app/api/donations/campaign/${id}`)
       setDonations(response.data)
     } catch (error) {
       console.error("Error fetching donations:", error)

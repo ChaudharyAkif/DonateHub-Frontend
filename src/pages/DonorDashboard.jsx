@@ -28,7 +28,7 @@ const DonorDashboard = () => {
       const headers = { Authorization: `Bearer ${token}` }
 
       // Fetch donation history
-      const donationResponse = await axios.get("http://localhost:5000/api/donations/donor", { headers })
+      const donationResponse = await axios.get("https://donate-hub-backend11.vercel.app/api/donations/donor", { headers })
       const donations = donationResponse.data
 
       // Calculate stats
@@ -42,7 +42,7 @@ const DonorDashboard = () => {
       })
 
       // Fetch recent campaigns
-      const campaignResponse = await axios.get("http://localhost:5000/api/campaigns?limit=6")
+      const campaignResponse = await axios.get("https://donate-hub-backend11.vercel.app/api/campaigns?limit=6")
       setRecentCampaigns(campaignResponse.data.slice(0, 6))
     } catch (error) {
       console.error("Error fetching dashboard data:", error)

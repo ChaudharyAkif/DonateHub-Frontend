@@ -40,7 +40,7 @@ const DonationForm = ({ campaignId, onSuccess, onCancel }) => {
       console.log("[v0] Making donation request:", { campaignId, amount: donationAmount })
 
       const response = await axios.post(
-        "http://localhost:5000/api/donations",
+        "https://donate-hub-backend11.vercel.app/api/donations",
         {
           campaignId,
           amount: donationAmount,

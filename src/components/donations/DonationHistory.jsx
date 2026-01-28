@@ -19,7 +19,7 @@ const DonationHistory = () => {
 
   const fetchDonationHistory = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/donations/donor")
+      const response = await axios.get("https://donate-hub-backend11.vercel.app/api/donations/donor")
       setDonations(response.data)
 
       // Calculate stats

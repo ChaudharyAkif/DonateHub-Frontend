@@ -37,7 +37,7 @@ const CreateCampaign = () => {
     setLoading(true)
 
     try {
-      const response = await axios.post("http://localhost:5000/api/campaigns", {
+      const response = await axios.post("https://donate-hub-backend11.vercel.app/api/campaigns", {
         ...formData,
         goalAmount: Number.parseFloat(formData.goalAmount),
       })

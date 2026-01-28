@@ -15,7 +15,7 @@ const SupportedCampaigns = () => {
   const fetchSupportedCampaigns = async () => {
     try {
       // Get donation history to find supported campaigns
-      const donationResponse = await axios.get("http://localhost:5000/api/donations/donor")
+      const donationResponse = await axios.get("https://donate-hub-backend11.vercel.app/api/donations/donor")
       const donations = donationResponse.data
 
       // Group donations by campaign and calculate totals
@@ -41,7 +41,7 @@ const SupportedCampaigns = () => {
       // Fetch full campaign details for each supported campaign
       const campaignPromises = Array.from(campaignMap.keys()).map(async (campaignId) => {
         try {
-          const response = await axios.get(`http://localhost:5000/api/campaigns/${campaignId}`)
+          const response = await axios.get(`https://donate-hub-backend11.vercel.app/api/campaigns/${campaignId}`)
           return {
             ...campaignMap.get(campaignId),
             campaign: response.data,

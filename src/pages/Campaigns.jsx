@@ -24,7 +24,7 @@ const Campaigns = () => {
       if (filters.category !== "all") params.append("category", filters.category)
       if (filters.search) params.append("search", filters.search)
 
-      const response = await axios.get(`http://localhost:5000/api/campaigns?${params}`)
+      const response = await axios.get(`https://donate-hub-backend11.vercel.app/api/campaigns?${params}`)
       setCampaigns(response.data)
     } catch (error) {
       console.error("Error fetching campaigns:", error)

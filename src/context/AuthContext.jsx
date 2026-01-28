@@ -68,7 +68,7 @@ export const AuthProvider = ({ children }) => {
       const token = localStorage.getItem("token")
       if (token) {
         try {
-          const response = await axios.get("http://localhost:5000/api/auth/me")
+          const response = await axios.get("https://donate-hub-backend11.vercel.app/api/auth/me")
           console.log("[v0] Auth check response:", response.data)
           dispatch({
             type: "LOGIN_SUCCESS",
@@ -93,7 +93,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       dispatch({ type: "SET_LOADING", payload: true })
-      const response = await axios.post("http://localhost:5000/api/auth/login", {
+      const response = await axios.post("https://donate-hub-backend11.vercel.app/api/auth/login", {
         email,
         password,
       })
@@ -119,7 +119,7 @@ export const AuthProvider = ({ children }) => {
   const register = async (name, email, password, role) => {
     try {
       dispatch({ type: "SET_LOADING", payload: true })
-      const response = await axios.post("http://localhost:5000/api/auth/register", {
+      const response = await axios.post("https://donate-hub-backend11.vercel.app/api/auth/register", {
         name,
         email,
         password,

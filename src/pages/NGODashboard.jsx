@@ -61,10 +61,10 @@ const NGODashboard = () => {
       console.log("[v0] Making API calls with user ID:", userId)
 
       try {
-        const donationResponse = await axios.get("http://localhost:5000/api/donations/ngo/stats", { headers })
+        const donationResponse = await axios.get("https://donate-hub-backend11.vercel.app/api/donations/ngo/stats", { headers })
         console.log("[v0] Donation response:", donationResponse.data)
 
-        const campaignResponse = await axios.get(`http://localhost:5000/api/campaigns/ngo/${userId}`, { headers })
+        const campaignResponse = await axios.get(`https://donate-hub-backend11.vercel.app/api/campaigns/ngo/${userId}`, { headers })
         console.log("[v0] Campaign response:", campaignResponse.data)
 
         const donationData = donationResponse.data
@@ -88,7 +88,7 @@ const NGODashboard = () => {
         try {
           console.log("[v0] Trying individual API calls...")
 
-          const donationResponse = await axios.get("http://localhost:5000/api/donations/ngo/stats", { headers })
+          const donationResponse = await axios.get("https://donate-hub-backend11.vercel.app/api/donations/ngo/stats", { headers })
           console.log("[v0] Individual donation response:", donationResponse.data)
 
           const donationData = donationResponse.data
@@ -103,7 +103,7 @@ const NGODashboard = () => {
         }
 
         try {
-          const campaignResponse = await axios.get(`http://localhost:5000/api/campaigns/ngo/${userId}`, { headers })
+          const campaignResponse = await axios.get(`https://donate-hub-backend11.vercel.app/api/campaigns/ngo/${userId}`, { headers })
           console.log("[v0] Individual campaign response:", campaignResponse.data)
 
           const campaignData = campaignResponse.data

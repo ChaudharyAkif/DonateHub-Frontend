@@ -32,7 +32,7 @@ const DonationStats = () => {
       }
 
       const headers = { Authorization: `Bearer ${token}` }
-      const response = await axios.get("http://localhost:5000/api/donations/ngo/stats", { headers })
+      const response = await axios.get("https://donate-hub-backend11.vercel.app/api/donations/ngo/stats", { headers })
 
       console.log("[v0] NGO stats response:", response.data) // Debug log
       setStats(response.data)
